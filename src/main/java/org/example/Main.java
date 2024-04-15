@@ -17,6 +17,7 @@ public class Main {
         System.out.println("1 - Get data");
         System.out.println("2 - Insert data");
         System.out.println("3 - Update data");
+        System.out.println("4 - Delete data");
 
         int option = sc.nextInt();
 
@@ -37,9 +38,17 @@ public class Main {
                 System.out.println("Update your load");
                 Load newLoad = newLoad();
                 db.updateData(conn, "loads", oldLoad, newLoad);
+                break;
+            }
+            case 4: {
+                System.out.println("Enter the invoice number: ");
+                int invoice = sc.nextInt();
+                db.deleteData(conn, "loads", invoice);
+                break;
             }
         }
     }
+
 
     public static Load newLoad(){
         Scanner sc = new Scanner(System.in);

@@ -109,4 +109,16 @@ public class DbConnection {
             System.out.println(e.getMessage());
         }
     }
+
+    public void deleteData(Connection conn, String tableName, int invoice){
+        Statement statement;
+        try{
+            String query = "DELETE FROM "+tableName+" WHERE invoice="+invoice;
+            statement = conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Data deleted successfully");
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
