@@ -60,7 +60,4 @@ public class Load {
         return timeApp;
     }
 
-    public void setTimeApp(String timeApp) {
-        this.timeApp = timeApp;
-    }
 }
